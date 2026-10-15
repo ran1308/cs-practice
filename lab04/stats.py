@@ -51,3 +51,4 @@ def warmest_city(records: list[dict]) -> str:
         return ""
     best = sorted(avg.items(), key=lambda x: (-x[1], x[0]))[0][0]
     return best
+# добавил проверки в parse_record
