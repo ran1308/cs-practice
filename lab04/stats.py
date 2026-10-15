@@ -17,7 +17,7 @@ def parse_record(line: str) -> dict:
     return {"city": city.strip(), "temp": temp, "date": date.strip()}
 
 
-def read_valid(lines: list[str]) -> list[dict]:
+def read_valid(lines: list[str]) -> list[dict]: # обработка ошибок
     records = []
     for line in lines:
         if not line.strip():
@@ -52,3 +52,4 @@ def warmest_city(records: list[dict]) -> str:
     best = sorted(avg.items(), key=lambda x: (-x[1], x[0]))[0][0]
     return best
 # добавил проверки в parse_record
+# реализовал обработку ошибок в read_valid
