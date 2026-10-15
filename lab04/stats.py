@@ -14,7 +14,7 @@ def parse_record(line: str) -> dict:
     except ValueError:
         raise ValueError("Температура не число")
     
-    return {"city": city.strip(), "temp": temp, "date": date.strip()}
+    return {"city": city.strip(), "temperature": temp, "date": date.strip()}
 
 
 def read_valid(lines: list[str]) -> list[dict]: # обработка ошибок
@@ -34,7 +34,7 @@ def average_by_city(records: list[dict]) -> dict:
     counts = {}
     for rec in records:
         c = rec["city"]
-        totals[c] = totals.get(c, 0.0) + rec["temp"]
+        totals[c] = totals.get(c, 0.0) + rec["temperature"]
         counts[c] = counts.get(c, 0) + 1
     
     result = {}
